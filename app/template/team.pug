@@ -1,0 +1,27 @@
+-
+	var team = [['Semf Ucuk', 'CEO & Founder'], ['Duk Adalin', 'Engineering'], ['Jeng Kol', 'Designer'], ['Pet Romak', 'Marketing']]
+mixin teamMember(name, position)
+	.team__member
+		.team__member__image
+		.team__member__info
+			.member__name-block
+				h3.member__name.name= name
+			.member__position-block
+				span.member__position.position= position
+section.team#team
+	.overlay
+		.container
+			.team__inner.inner
+				.team__title-block.inner__title-block
+					h1.team__title.inner__title Meet Our Amazin Team
+				.team__subtitle-block.inner__subtitle-block
+					h2.team__subtitle.inner__subtitle Lorem ipsum dolor sit amet proin gravida nibh vel velit
+				hr.line.team__line
+				.team__content.inner__content
+					.team__members
+						each item in team
+							+teamMember(item[0], item[1])
+					.team__bottom
+						p.team__bottom-text Become part of our dream team, let’s join us ! 
+						.button-block
+							a(href='#').team__button.button We Are Hiring

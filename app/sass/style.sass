@@ -1,0 +1,433 @@
+$font-title: 'Playfair Display', serif
+$font-comments: 'Playfair Display', serif
+$font-text: 'Roboto', sans-serif
+$font-button: 'Hammersmith One', sans-serif
+$font-logo: 'Roboto', sans-serif
+$font-nav: 'Roboto', sans-serif
+$lightblue: #00e0d0
+$grey: #413d4b
+$white: white
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss'
+*, *::before, *::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	scroll-behavior: smooth
+a 
+	text-decoration: none
+.overlay
+	width: 100%
+	height: inherit
+	background: linear-gradient(90deg, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%)
+.container
+	width: 100%
+	max-width: 1150px
+	height: inherit
+	margin: 0 auto
+	padding: 0 20px
+.inner
+	padding: 70px 0
+	&__title
+		font-size: 22pt
+		text-transform: uppercase
+		font-family: $font-title
+		text-align: center
+		color: $white
+		&_grey
+			color: $grey
+	&__subtitle
+		text-align: center
+		font-family: $font-title
+		opacity: .75
+		font-size: 14pt
+		word-spacing: 4px
+		font-weight: 400
+		&-block
+			margin: 10px 0
+.content
+	&__text
+		font-family: $font-text
+		font-weight: 300
+		line-height: 22pt
+		font-size: 14pt
+		&_grey
+			color: $grey
+.button
+	&-block
+		height: auto
+		display: flex
+		align-items: center
+	color: $lightblue
+	font-size: 16pt
+	text-transform: uppercase
+	font-family: $font-button
+	border: 1px solid $lightblue
+	border-radius: 3px
+	padding: 14px 16px
+	transition: all .2s linear
+	&:hover
+		color: black
+		background: $lightblue
+.header
+	height: 100vh
+	background: url('../images/header_bg1.jpg') no-repeat center
+	background-size: cover
+	&__inner
+		height: inherit
+	&__top
+		height: 13vh
+		display: flex
+		justify-content: space-between
+	&__nav
+		width: 670px
+		list-style-type: none
+		display: flex
+		justify-content: space-between
+		align-items: center
+		&__item
+			margin-right: 25px
+			&:last-child
+				margin: 0
+	&__main
+		height: 87vh
+		display: flex
+		justify-content: center
+		align-items: center
+	&__content
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+		color: $white
+	&__title
+		text-transform: capitalize
+		font-size: 32pt
+	&__text
+		width: 85%
+		line-height: 24pt
+		margin-bottom: 50px
+.tajam__logo
+	display: flex
+	align-items: center
+.logo__image-block
+	margin-right: 10px
+.logo__title
+	font-size: 30pt
+	color: $lightblue
+	font-family: $font-logo
+	font-weight: 100
+.nav__link
+	color: $white
+	font-family: $font-nav
+	font-weight: 900
+	text-transform: uppercase
+	font-size: 13pt
+	transition: color .2s linear
+	&:hover
+		color: $lightblue
+.line
+	width: 50px
+	height: 2px
+	border: none
+	background: $grey
+	opacity: .3
+	margin: 20px auto
+	&_blue
+		background: $lightblue
+		margin: 25px 0
+		opacity: 1
+		height: 1px
+.about
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__image
+		height: 80%
+	&__content
+		width: 670px
+	&__title
+		text-align: left
+	&__text
+		margin: 30px 0
+.video
+	background: url('../images/story_video.jpg') no-repeat center
+	background-size: cover
+	height: 80vh
+	&__inner
+		height: inherit
+		display: flex
+		justify-content: center
+		align-items: center
+	&__watch
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__title
+		font-family: $font-text
+		font-weight: 900
+		text-transform: uppercase
+		color: $white
+		font-size: 16pt
+		margin-top: 30px
+.play-button
+	width: 130px
+	transition: opacity .15s linear 
+	&:hover
+		opacity: .7
+		cursor: pointer
+.expertise__content
+	margin-top: 50px
+.expertise__items
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-template-rows: repeat(2, 1fr)
+.expertise__item
+	&:not(:nth-child(3n))
+		border-right: 1px solid rgba(51, 51, 51, .08)
+	&:not(:nth-last-child(-n + 3))
+		border-bottom: 1px solid rgba(51, 51, 51, .08)
+	padding: 40px 20px
+	text-align: center
+	&__image-block
+		margin-bottom: 40px
+	&__title
+		font-family: $font-text
+		text-transform: uppercase
+		font-size: 14pt
+		color: $grey
+		font-weight: 900
+		letter-spacing: 1px
+		&-block
+			margin-bottom: 25px
+	&__description
+		font-family: $font-text
+		opacity: .75
+		font-weight: 300
+		line-height: 22pt
+.team
+	background: url('../images/team_bg.jpg') no-repeat center
+	background-size: cover
+	&__subtitle
+		color: white
+		opacity: 1
+	&__line
+		background: $white
+		opacity: .2
+	&__content
+		margin-top: 45px
+	&__members
+		display: flex
+		justify-content: space-between
+	&__bottom
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-top: 70px
+		&-text
+			font-family: $font-text
+			font-size: 14pt
+			color: $white
+			font-weight: 300
+			margin-bottom: 30px
+.team__member
+	text-align: center
+	width: 255px
+	height: 360px
+	border: 1px solid rgba(255, 255, 255, .5)
+	&__image
+		width: 100%
+		height: 75%
+		background-color: $white
+	&__info
+		height: 25%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		color: $white
+		font-family: $font-text
+.name
+	font-weight: 900
+	font-size: 14pt
+	text-transform: uppercase
+.position
+	font-size: 13pt
+	font-weight: 300
+	text-transform: uppercase
+	opacity: .7
+.works
+	&__top
+		&__inner
+			display: flex
+			justify-content: space-between
+			align-items: center
+	&__link
+		font-family: $font-text
+		color: $grey
+		font-size: 14pt
+		font-weight: 300
+	&__content
+		margin: 70px 0
+	&__item
+		height: 20vh
+		&-g1
+			background: #b6b6b6
+		&-g2
+			background: #acacac
+		&-g3
+			background: #a1a1a1
+		&-g4
+			background: #8a8a8a
+		&-g5
+			background: #a4a4a4
+	&__bottom
+		display: flex
+		justify-content: center
+	&__button
+		padding: 15px 25px
+.people
+	background: url('../images/testimonials_bg.jpg') center no-repeat
+	background-size: cover
+	&__container
+		max-width: 1010px
+	&__title
+		font-size: 100pt
+		font-weight: 400
+		margin: -40px 0
+	&__content
+		display: flex
+		flex-direction: column
+		align-items: center
+		color: $white
+		text-align: center
+	&__info
+		font-family: $font-text
+		margin: 50px 0 40px 0
+		&__name-block
+			margin-bottom: 10px
+	&__avatars
+		width: 310px
+		height: 70px
+		display: flex
+		justify-content: space-between
+		align-items: center
+.content__text
+	font-family: $font-comments
+	font-size: 16pt
+	font-weight: 400
+	opacity: .85
+	line-height: 26pt
+.avatars__item
+	width: 45px
+	height: 45px
+	display: flex
+	justify-content: center
+	align-items: center
+	transition: width .2s linear
+	cursor: pointer
+	&_selected
+		width: 70px
+.avatar__image
+	width: 100%
+	
+.contacts
+	&__content
+		display: flex
+		justify-content: center
+		margin-top: 35px
+	&__form
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__input
+		width: 460px
+		padding: 15px 20px
+		outline: none
+		font-family: $font-text
+		font-weight: 300
+		font-size: 14pt
+		color: $grey
+		border: 1px solid rgba(0, 0, 0, .1)
+		margin-bottom: 20px
+		transition: border-color .3s linear
+		&::placeholder
+			opacity: .5
+		&:focus
+			border-color: rgba(0, 0, 0, .3)
+	&__textarea
+		height: 200px
+		resize: none
+	&__button
+		width: 160px
+		background: white
+		cursor: pointer
+.footer
+	background: url('../images/footer_bg.jpg') no-repeat
+	background-size: cover
+	&__content
+		margin-bottom: 65px
+	&__title
+		color: $white
+		font-size: 15pt
+		font-family: $font-text
+		font-weight: 900
+		text-transform: uppercase
+		&-block
+			display: flex
+			align-items: center
+			height: 50px
+			margin-bottom: 30px
+	&__text
+		color: $white
+		font-family: $font-text
+		font-weight: 300
+		font-size: 14pt
+		line-height: 26pt
+	&__info
+		&__item
+			display: flex
+			margin-bottom: 20px
+		&__logo
+			width: 18px
+			&-block
+				margin: 5px 10px 0 0
+	&__form
+		display: flex
+		justify-content: space-between
+		margin-bottom: 25px
+		&__input
+			width: 250px
+			padding: 15px
+			outline: none
+			background: none
+			font-family: $font-text
+			font-size: 14pt
+			font-weight: 300
+			color: white
+			border: 1px solid rgba(255, 255, 255, .5)
+			margin-right: 10px
+			&::placeholder
+				color: white
+				opacity: .75
+		&__submit
+			width: 85px
+	&__socials
+		display: flex
+	&__links
+		display: flex
+		justify-content: space-between
+	&__link
+		font-weight: 400
+		text-transform: uppercase
+		transition: color .2s linear
+		&:hover
+			color: $lightblue		
+	&__copyright
+		font-weight: 400
+		font-size: 14pt
+		&-block
+			text-align: right
+.socials__item
+	width: 35px
+	margin-right: 8px
+	cursor: pointer
