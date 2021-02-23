@@ -45,3 +45,4 @@ avatars.forEach((item, i) => item.addEventListener('click', () => {
 	document.querySelector('.avatars__item_selected').classList.remove('avatars__item_selected')
 	item.classList.add('avatars__item_selected')
 }))
+
