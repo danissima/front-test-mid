@@ -1,1 +1,2 @@
 //= feedbackScript.js
+//= modalScript.js
