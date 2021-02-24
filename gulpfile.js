@@ -54,7 +54,7 @@ function watching() {
 exports.styles = styles;
 exports.puging = puging;
 exports.watching = watching;
-exports.default = parallel(browSync, watching, puging, htmling, styles, scripts, images);
+exports.default = parallel(browSync, watching, puging, htmling, styles, scripts);
 exports.browSync = browSync;
 exports.htmling = htmling;
 exports.scripts = scripts;

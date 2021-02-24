@@ -7,6 +7,7 @@ $font-nav: 'Roboto', sans-serif
 $lightblue: #00e0d0
 $grey: #413d4b
 $white: white
+$breakpoint-tablet: 768px
 @import '../../node_modules/bootstrap/scss/bootstrap-grid.scss'
 *, *::before, *::after
 	margin: 0
@@ -78,12 +79,14 @@ a
 		height: 13vh
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 	&__nav
 		width: 670px
 		list-style-type: none
 		display: flex
 		justify-content: space-between
 		align-items: center
+		flex-wrap: wrap
 		&__item
 			margin-right: 25px
 			&:last-child
@@ -106,9 +109,19 @@ a
 		width: 85%
 		line-height: 24pt
 		margin-bottom: 50px
+@media (max-width: 884px)
+	.header
+		&__top
+			justify-content: center
+// @media (max-width: 690px)
+// 	.header
+// 		&__nav
+// 			&__item
+// 				margin-bottom: 20px
 .tajam__logo
 	display: flex
 	align-items: center
+	margin-right: 20px
 .logo__image-block
 	margin-right: 10px
 .logo__title
@@ -140,15 +153,27 @@ a
 .about
 	&__inner
 		display: flex
+		justify-content: flex-end
+	&__story
+		width: 1050px
+		display: flex
 		justify-content: space-between
 	&__image
-		height: 80%
+		width: 70%
+		&-block
+			text-align: center
+			margin-top: 15px
+			// width: 30%
 	&__content
-		width: 670px
+		// width: 60%
 	&__title
 		text-align: left
 	&__text
 		margin: 30px 0
+@media (max-width: 992px)
+	.about
+		&__image-block
+			display: none
 .video
 	background: url('../images/story_video.jpg') no-repeat center
 	background-size: cover
@@ -177,10 +202,6 @@ a
 		cursor: pointer
 .expertise__content
 	margin-top: 50px
-.expertise__items
-	display: grid
-	grid-template-columns: repeat(3, 1fr)
-	grid-template-rows: repeat(2, 1fr)
 .expertise__item
 	&:not(:nth-child(3n))
 		border-right: 1px solid rgba(51, 51, 51, .08)
@@ -204,6 +225,12 @@ a
 		opacity: .75
 		font-weight: 300
 		line-height: 22pt
+@media (max-width: 992px)
+	.expertise__item
+		&:not(:nth-child(2n))
+			border-right: 1px solid rgba(51, 51, 51, .08)
+		&:not(:nth-last-child(-n + 2))
+			border-bottom: 1px solid rgba(51, 51, 51, .08)
 .team
 	background: url('../images/team_bg.jpg') no-repeat center
 	background-size: cover
@@ -217,7 +244,8 @@ a
 		margin-top: 45px
 	&__members
 		display: flex
-		justify-content: space-between
+		justify-content: center
+		flex-wrap: wrap
 	&__bottom
 		display: flex
 		flex-direction: column
@@ -229,11 +257,16 @@ a
 			color: $white
 			font-weight: 300
 			margin-bottom: 30px
+@media (max-width: 1140px)
+	.team__members
+		max-width: 600px
+		margin: 0 auto
 .team__member
 	text-align: center
 	width: 255px
 	height: 360px
 	border: 1px solid rgba(255, 255, 255, .5)
+	margin: 10px
 	&__image
 		width: 100%
 		height: 75%
@@ -295,12 +328,18 @@ a
 		font-weight: 400
 		margin: -40px 0
 	&__content
-		min-height: 40vh
+		min-height: 350px
 		display: flex
 		flex-direction: column
 		align-items: center
 		color: $white
 		text-align: center
+	&__text
+		font-family: $font-comments
+		font-size: 16pt
+		font-weight: 400
+		opacity: .85
+		line-height: 26pt
 	&__data
 		margin-top: auto
 	&__info
@@ -314,12 +353,23 @@ a
 		display: flex
 		justify-content: space-between
 		align-items: center
-.content__text
-	font-family: $font-comments
-	font-size: 16pt
-	font-weight: 400
-	opacity: .85
-	line-height: 26pt
+@media (max-width: 1010px)
+	.people
+		&__content
+			min-height: 450px
+@media (max-width: 825px)
+	.people
+		&__content
+			min-height: 55vw
+@media (max-width: 540px)
+	.people
+		&__content
+			min-height: 85vh
+
+@media (max-width: 540px)
+	.people
+		&__content
+			min-height: 85vh
 .avatars__item
 	width: 45px
 	height: 45px
@@ -333,7 +383,6 @@ a
 		height: 70px
 .avatar__image
 	width: 100%
-	
 .contacts
 	&__content
 		display: flex
@@ -365,11 +414,19 @@ a
 		width: 160px
 		background: white
 		cursor: pointer
+@media (max-width: 510px)
+	.contacts
+		&__form
+			width: 100%
+		&__item
+			width: 100%
+		&__input
+			width: 100%
 .footer
-	background: url('../images/footer_bg.jpg') no-repeat
+	background: url('../images/footer_bg.jpg') no-repeat center
 	background-size: cover
 	&__content
-		margin-bottom: 65px
+		margin-bottom: 35px
 	&__title
 		color: $white
 		font-size: 15pt
@@ -395,12 +452,14 @@ a
 			width: 18px
 			&-block
 				margin: 5px 10px 0 0
+	&__item
+		margin-bottom: 30px
 	&__form
 		display: flex
 		justify-content: space-between
 		margin-bottom: 25px
 		&__input
-			width: 250px
+			width: 80%
 			padding: 15px
 			outline: none
 			background: none
@@ -419,7 +478,10 @@ a
 		display: flex
 	&__links
 		display: flex
-		justify-content: space-between
+		justify-content: space-around
+		flex-wrap: wrap
+		&__item
+			margin: 0 7px
 	&__link
 		font-weight: 400
 		text-transform: uppercase
@@ -431,6 +493,10 @@ a
 		font-size: 14pt
 		&-block
 			text-align: right
+@media (max-width: 576px)
+	.footer
+		&__copyright-block
+			text-align: center
 .socials__item
 	width: 35px
 	margin-right: 8px
@@ -476,6 +542,10 @@ a
 		height: 620px
 		display: flex
 		justify-content: center
+@media (max-width: 1140px)
+	.modal
+		&__video
+			height: 53vw
 @keyframes modal 
 	from 
 		opacity: 0
