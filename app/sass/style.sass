@@ -76,7 +76,8 @@ a
 	&__inner
 		height: inherit
 	&__top
-		height: 13vh
+		height: 110px
+		padding: 10px 0
 		display: flex
 		justify-content: space-between
 		flex-wrap: wrap
@@ -91,8 +92,38 @@ a
 			margin-right: 25px
 			&:last-child
 				margin: 0
+	&__mobile-nav-button
+		width: 50px
+		height: 50px
+		border: 1px solid $lightblue
+		border-radius: 3px
+		display: none
+		position: relative
+		&::after
+			content: '>'
+			width: inherit
+			height: inherit
+			display: block
+			position: absolute
+			color: white
+			display: flex
+			justify-content: center
+			align-items: center
+			font-family: $font-text
+			font-size: 30px
+	&__mobile-nav
+		width: 170px
+		list-style-type: none
+		position: absolute
+		right: 0
+		top: 100%
+		background: $grey
+		border: 1px solid $lightblue
+		border-radius: 3px
+		padding: 20px
+		display: none
 	&__main
-		height: 87vh
+		height: 87%
 		display: flex
 		justify-content: center
 		align-items: center
@@ -112,12 +143,33 @@ a
 @media (max-width: 884px)
 	.header
 		&__top
+			height: 150px
 			justify-content: center
-// @media (max-width: 690px)
-// 	.header
-// 		&__nav
-// 			&__item
-// 				margin-bottom: 20px
+@media screen and (max-width: 812px)
+	.header
+		height: 700px
+		&__main
+			height: 70%
+@media screen and(max-width: 768px)
+	.header
+		&__top
+			height: 100px
+			justify-content: space-between
+			align-items: center
+		&__nav
+			display: none
+		&__mobile-nav-button
+			display: block
+			&:hover .header__mobile-nav
+				display: block
+@media (max-width: 415px)
+	.header
+		height: auto
+		&__main
+			height: auto
+			padding: 50px 0
+.mobile-nav__item
+	margin-bottom: 15px
 .tajam__logo
 	display: flex
 	align-items: center
@@ -172,8 +224,14 @@ a
 		margin: 30px 0
 @media (max-width: 992px)
 	.about
+		&__title
+			text-align: center
+		&__text
+			text-align: justify
 		&__image-block
 			display: none
+		&__button-block
+			justify-content: center
 .video
 	background: url('../images/story_video.jpg') no-repeat center
 	background-size: cover
@@ -203,10 +261,6 @@ a
 .expertise__content
 	margin-top: 50px
 .expertise__item
-	&:not(:nth-child(3n))
-		border-right: 1px solid rgba(51, 51, 51, .08)
-	&:not(:nth-last-child(-n + 3))
-		border-bottom: 1px solid rgba(51, 51, 51, .08)
 	padding: 40px 20px
 	text-align: center
 	&__image-block
@@ -225,12 +279,26 @@ a
 		opacity: .75
 		font-weight: 300
 		line-height: 22pt
-@media (max-width: 992px)
+$expertise-item-border: rgba(51, 51, 51, .08)
+@media (min-width: 992px)
 	.expertise__item
-		&:not(:nth-child(2n))
-			border-right: 1px solid rgba(51, 51, 51, .08)
-		&:not(:nth-last-child(-n + 2))
-			border-bottom: 1px solid rgba(51, 51, 51, .08)
+		&:nth-child(-n+3)
+			border-bottom: 1px solid $expertise-item-border
+		&:nth-child(3n+1)
+			border-right: 1px solid $expertise-item-border
+		&:nth-child(3n)
+			border-left: 1px solid $expertise-item-border
+@media (max-width: 991px)
+	.expertise__item
+		&:nth-child(-n+4)
+			border-bottom: 1px solid $expertise-item-border
+		&:nth-child(2n+1)
+			border-right: 1px solid $expertise-item-border
+@media (max-width: 767px)
+	.expertise__item
+		&:nth-child(-n+5)
+			border-bottom: 1px solid $expertise-item-border
+			border-right: none
 .team
 	background: url('../images/team_bg.jpg') no-repeat center
 	background-size: cover
@@ -250,6 +318,7 @@ a
 		display: flex
 		flex-direction: column
 		align-items: center
+		text-align: center
 		margin-top: 70px
 		&-text
 			font-family: $font-text
@@ -302,7 +371,7 @@ a
 	&__content
 		margin: 70px 0
 	&__item
-		height: 20vh
+		height: 170px
 		&-g1
 			background: #b6b6b6
 		&-g2
@@ -318,6 +387,12 @@ a
 		justify-content: center
 	&__button
 		padding: 15px 25px
+@media (max-width: 540px)
+	.works
+		&__top
+			&__inner
+				height: 80px
+				flex-direction: column
 .people
 	background: url('../images/testimonials_bg.jpg') center no-repeat
 	background-size: cover
@@ -328,7 +403,7 @@ a
 		font-weight: 400
 		margin: -40px 0
 	&__content
-		min-height: 350px
+		height: 350px
 		display: flex
 		flex-direction: column
 		align-items: center
@@ -340,6 +415,8 @@ a
 		font-weight: 400
 		opacity: .85
 		line-height: 26pt
+		&-block
+			overflow: auto
 	&__data
 		margin-top: auto
 	&__info
@@ -356,20 +433,11 @@ a
 @media (max-width: 1010px)
 	.people
 		&__content
-			min-height: 450px
-@media (max-width: 825px)
-	.people
-		&__content
-			min-height: 55vw
+			height: 420px
 @media (max-width: 540px)
 	.people
 		&__content
-			min-height: 85vh
-
-@media (max-width: 540px)
-	.people
-		&__content
-			min-height: 85vh
+			height: 500px
 .avatars__item
 	width: 45px
 	height: 45px
@@ -525,6 +593,7 @@ a
 	&__title-block
 		display: flex
 		justify-content: space-between
+		align-items: center
 		margin: 30px
 	&__close
 		background: none
@@ -544,8 +613,27 @@ a
 		justify-content: center
 @media (max-width: 1140px)
 	.modal
+		
 		&__video
 			height: 53vw
+@media (max-width: 992px)
+	.modal
+		&__inner
+			align-items: center
+		&__video
+			height: 32vw
+		&__content
+			width: 60%
+@media (max-width: 480px)
+	.modal
+		&__content
+			width: 100%
+		&__title
+			font-size: 16pt
+			&-block
+				margin: 15px
+		&__video
+			height: 50vw
 @keyframes modal 
 	from 
 		opacity: 0

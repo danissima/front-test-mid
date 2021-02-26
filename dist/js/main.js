@@ -66,3 +66,8 @@ function closeModal() {
 	video.src = ""
 	video.src = videoSrc
 }
+let navButton = document.querySelector(".header__mobile-nav-button")
+console.log(navButton)
+navButton.addEventListener('click', () => {
+	
+})
