@@ -5,7 +5,7 @@
 	<meta charset="UTF-8"/>
 	<title>Tajam</title>
 	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="shortcut icon" href="images/header_logo.png">
+	<link rel="shortcut icon" href="images/logo.png">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Playfair+Display:wght@400;700;900&family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
 	<script src="js/main.js" defer></script>
@@ -18,10 +18,7 @@
 					<div class="header__top">
 						<div class="tajam__logo">
 							<div class="logo__image-block">
-								<img src="images/header_logo.png" alt="logo">
-							</div>
-							<div class="logo__title-block">
-								<span class="logo__title">tajam</span>
+								<img src="images/header-logo.png" alt="logo" class="logo__image">
 							</div>
 						</div>
 						<ul class="header__nav">
@@ -93,7 +90,7 @@
 			<div class="container">
 				<div class="expertise__inner inner">
 					<div class="expertise__title-block inner__title-block">
-						<h1 class="expertise__title inner__title inner__title_grey">Expertice</h1>
+						<h1 class="expertise__title inner__title inner__title_grey">Expertise</h1>
 					</div>
 					<div class="expertise__subtitle-block inner__subtitle-block">
 						<h2 class="expertise__subtitle inner__subtitle inner__title_grey">Lorem ipsum dolor sit amet proin gravida nibh vel velit</h2>
@@ -250,18 +247,18 @@
 						<h1 class="contacts__title inner__title inner__title_grey">Give Us A Good News</h1>
 					</div>
 					<div class="contacts__content inner__content">
-						<form class="contacts__form">
+						<form onsubmit="false" class="contacts__form" id="form">
 							<div class="contacts__item">
-								<input type="text" class="contacts__input" placeholder="Name">
+								<input type="text" class="contacts__input" required name="name" id="name" placeholder="Name">
 							</div>
 							<div class="contacts__item">
-								<input type="text" class="contacts__input" placeholder="Email">
+								<input type="email" class="contacts__input" required name="mail" id="mail" placeholder="Email">
 							</div>
 							<div class="contacts__item">
-								<input type="text" class="contacts__input" placeholder="Subject">
+								<input type="text" class="contacts__input" required name="subject" id="subject" placeholder="Subject">
 							</div>
 							<div class="contacts__item">
-								<textarea class="contacts__input contacts__textarea" placeholder="Your Massage"></textarea>
+								<textarea class="contacts__input contacts__textarea" required name="message" id="message" placeholder="Your Massage"></textarea>
 							</div>
 							<button class="contacts__button button">Submit</button>
 						</form>
@@ -278,10 +275,7 @@
 						<div class="footer__item col-lg-4 col-md-12">
 							<div class="tajam__logo footer__title-block">
 								<div class="logo__image-block">
-									<img src="images/header_logo.png" alt="logo">
-								</div>
-								<div class="logo__title-block">
-									<span class="logo__title">tajam</span>
+									<img src="images/header-logo.png" alt="logo" class="logo__image">
 								</div>
 							</div>
 							<p class="footer__text">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</p>
@@ -295,7 +289,7 @@
 									<div class="footer__info__logo-block">
 										<img src="images/jps_icon.png" alt="address" class="footer__info__logo">
 									</div>
-									<p class="footer__text">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia</p>
+									<p class="footer__text">Ruko cucruk, Jl. Radio luar dalem jos<br>No.12 - 13, Kalideres - Jakarta Barat <br> 11480 - Indonesia</p>
 								</div>
 								<div class="footer__info__item">
 									<div class="footer__info__logo-block">
